@@ -1,24 +1,30 @@
-import { Container } from "./styles";
+import { Container, ContainerDetail } from "./styles";
 import { useDispatch } from "react-redux";
 import { addToCartThunk } from "../../store/modules/cart/thunks";
-import { toast } from "react-toastify";
+import ticket from "../../assets/img/ticket.png";
+import { useHistory } from "react-router-dom";
 const CardList = ({ product }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   return (
     <Container>
-      <img src={product.image} alt={product.name} />
+      <img src={ticket} alt={product.title} />
       <hr />
-      <h3>{product.name}</h3>
-      <span>
-        {product.price.toLocaleString("pt-br", {
-          style: "currency",
-          currency: "BRL",
-        })}
-      </span>
+      <ContainerDetail>
+        <h3>{product.title}</h3>
+        <h4>{product.category}</h4>
+        <p>{product.description}</p>
+        <span>
+          {product.price.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
+      </ContainerDetail>
       <button
         onClick={() => {
-          toast.success("Produto adicionado ao carrinho!");
           dispatch(addToCartThunk(product));
+          history.push("/cart");
         }}
       >
         Adicionar ao carrinho

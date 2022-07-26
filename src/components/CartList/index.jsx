@@ -4,23 +4,18 @@ import {
   ContainerHeader,
   ContainerTotal,
   ContainerLinerButtom,
-  ContainerNull,
   ContainerProduct,
 } from "./styles";
 import CardCart from "../CardCart";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 function CartList() {
   const cart = useSelector((store) => store.cart);
   const history = useHistory();
 
   return cart.length === 0 ? (
-    <ContainerNull>
-      <ContainerTotal>
-        <h1>Carrinho Vazio</h1>
-      </ContainerTotal>
-    </ContainerNull>
+    Redirect("/dashboard")
   ) : (
     <Container>
       <ContainerCart>
@@ -53,16 +48,9 @@ function CartList() {
                 style: "currency",
                 currency: "BRL",
               })}{" "}
-            {/* Essa dica do Gabriel fui maravilhosa ^^ */}
           </p>
         </ContainerHeader>
-        <button
-          onClick={() => {
-            history.push("/login");
-          }}
-        >
-          Finalizar pedido
-        </button>
+        <button onClick={() => {}}>Finalizar pedido</button>
         <ContainerLinerButtom />
       </ContainerTotal>
     </Container>

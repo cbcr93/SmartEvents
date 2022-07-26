@@ -43,14 +43,13 @@ const LoginForm = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     dispatch(singInThunk(data));
+    dispatch(getAllTicketsThunk());
 
     if (token) {
       history.push("/dashboard");
     }
-
     setLoading(false);
   };
-  dispatch(getAllTicketsThunk());
 
   return (
     <Container maxWidth="xs" sx={{ mb: 5 }}>

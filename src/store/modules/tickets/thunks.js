@@ -13,3 +13,16 @@ export const getAllTicketsThunk = () => (dispatch) => {
       console.log(err.response.data.message);
     });
 };
+
+export const createTicketsThunk = () => (dispatch) => {
+  apiSE
+    .get("/tickets/")
+    .then((response) => {
+      localStorage.setItem("@SE:tickets", JSON.stringify(response.data));
+
+      dispatch(allTickets(response.data));
+    })
+    .catch((err) => {
+      console.log(err.response.data.message);
+    });
+};

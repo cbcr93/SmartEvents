@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
 import { Container, ContainerCart, ContainerHeader } from "./styles";
 
+import { CgProfile } from "react-icons/cg";
+
 function Header() {
   const history = useHistory();
 
@@ -17,10 +19,10 @@ function Header() {
         <ContainerCart>
           <button
             onClick={() => {
-              history.push("/cart");
+              history.push("/profile");
             }}
           >
-            Carrinho
+            <CgProfile />
           </button>
         </ContainerCart>
       </Container>

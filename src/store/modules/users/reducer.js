@@ -1,6 +1,6 @@
 import { SIGN_IN } from "./actiontypes";
 
-const token = localStorage.getItem("token") || "";
+const token = localStorage.getItem("@SE:token") || "";
 
 const defaultState = {
   token,

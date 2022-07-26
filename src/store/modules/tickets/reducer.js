@@ -1,13 +1,17 @@
 import { ALLTICKETS } from "./actionsTypes";
 
-const defaultState = {
-  tickets: {
+const tickets = JSON.parse(localStorage.getItem("@SE:tickets")) || [
+  {
     title: "ERRO",
     description: "ERRO",
     price: 0,
     image: "",
     category: "ERRO",
   },
+];
+
+const defaultState = {
+  tickets: tickets,
   orders: {},
 };
 

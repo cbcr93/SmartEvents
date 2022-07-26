@@ -1,23 +1,23 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import CardList from "../CardList";
+import Filter from "../Filter";
 import { Container, ContainerCards } from "./styles";
 
 function List() {
-  const tickets = JSON.parse(localStorage.getItem("@SE:tickets")) || {
-    title: "ERRO",
-    description: "ERRO",
-    price: 0,
-    image: "",
-    category: "ERRO",
-  };
+  const { tickets } = useSelector((state) => state.tickets);
+  const [productsFilter, SetProductsFilter] = useState(tickets);
 
-  console.log(tickets);
+  const products = tickets;
 
-  const products = [tickets];
   return (
     <Container>
+      <Filter
+        productsFilter={productsFilter}
+        SetProductsFilter={SetProductsFilter}
+      />
       <ContainerCards>
-        {products.map((item, index) => (
+        {productsFilter.map((item, index) => (
           <CardList key={index} product={item} />
         ))}
       </ContainerCards>

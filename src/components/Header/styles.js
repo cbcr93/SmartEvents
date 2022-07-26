@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerHeader = styled.div`
   background: #ffffff;
   margin: 0 auto;
-  min-width: 700px;
+  min-width: 300px;
 
   strong {
     color: #fd377e;
