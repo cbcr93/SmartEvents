@@ -4,6 +4,12 @@ export const Container = styled.div`
   background: #f3f3f3;
   height: 100vh;
   padding: 30px 10%;
+
+  section {
+    display: flex;
+
+    justify-content: space-around;
+  }
 `;
 
 export const ContainerCards = styled.div`

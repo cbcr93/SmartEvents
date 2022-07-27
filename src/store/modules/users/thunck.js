@@ -143,7 +143,31 @@ export const orderListerSellerThunk = (token, ticketId) => (dispatch) => {
     });
 };
 
-export const updateTicketThunk = (orderId, token) => () => {
+export const createTicketThunk = (data, token, userId) => (dispatch) => {
+  console.log(data, "---", token);
+
+  apiSE
+    .post("/tickets/", data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+      dispatch(userListerThunk(userId, token));
+      toast.success("Registro feito com sucesso!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    })
+    .catch((err) => {
+      console.log(err.response);
+      toast.error("Ops! Algo deu errado!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    });
+};
+
+export const updateTicketThunk = (orderId, token, userId) => (dispatch) => {
   const data = {
     isPaid: true,
   };
@@ -157,6 +181,7 @@ export const updateTicketThunk = (orderId, token) => () => {
     })
     .then((response) => {
       console.log(response.data);
+      //dispatch(userListerThunk(userId, token))
       toast.success("Registro feito com sucesso!", {
         position: toast.POSITION.TOP_CENTER,
       });

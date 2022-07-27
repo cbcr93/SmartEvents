@@ -15,7 +15,7 @@ import { updateTicketThunk } from "../../store/modules/users/thunck";
 
 const SellesList = ({ product }) => {
   const dispatch = useDispatch();
-  const { token } = useSelector((store) => store.user);
+  const { token, userId } = useSelector((store) => store.user);
 
   return (
     <Container>
@@ -25,10 +25,10 @@ const SellesList = ({ product }) => {
         <h3>{product.title}</h3>
         <h4>{product.category}</h4>
         <p>{product.description}</p>
-        {product.isPaid ? (
-          <h5>Compra Confirmada</h5>
-        ) : (
+        {product.orders.find((item) => item.isPaid === false) ? (
           <h5>Aguardando Confirmação</h5>
+        ) : (
+          <h5>Compras Confirmadas</h5>
         )}
 
         <span> Quantidade: {product.orders.length} - </span>
@@ -62,7 +62,7 @@ const SellesList = ({ product }) => {
                       variant="contained"
                       color="error"
                       onClick={() => {
-                        dispatch(updateTicketThunk(item.id, token));
+                        dispatch(updateTicketThunk(item.id, token, userId));
                       }}
                     >
                       Check
