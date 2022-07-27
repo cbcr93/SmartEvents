@@ -27,7 +27,7 @@ const CardList = ({ product }) => {
           history.push("/cart");
         }}
       >
-        Adicionar ao carrinho
+        Mais informações
       </button>
     </Container>
   );

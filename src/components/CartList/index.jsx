@@ -7,12 +7,23 @@ import {
   ContainerProduct,
 } from "./styles";
 import CardCart from "../CardCart";
-import { useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+import {
+  OrderThunk,
+  removeFromCartThunk,
+} from "../../store/modules/cart/thunks";
 
 function CartList() {
+  const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
-  const history = useHistory();
+  const { token, isSeller } = useSelector((store) => store.user);
+
+  const getOut = () => {
+    cart.map((item) => {
+      dispatch(removeFromCartThunk(item));
+    });
+  };
 
   return cart.length === 0 ? (
     Redirect("/dashboard")
@@ -24,10 +35,10 @@ function CartList() {
           <h4>Preço</h4>
         </ContainerHeader>
         <ContainerProduct>
-          {cart.map((produto, index) => (
+          {cart.map((produto) => (
             <>
               <hr />
-              <CardCart key={index} product={produto} />
+              <CardCart product={produto} />
             </>
           ))}
         </ContainerProduct>
@@ -41,7 +52,7 @@ function CartList() {
             {cart
               .reduce(
                 (previousValue, currentValue) =>
-                  previousValue + currentValue.price,
+                  previousValue + Number(currentValue.price),
                 0
               )
               .toLocaleString("pt-br", {
@@ -50,7 +61,22 @@ function CartList() {
               })}{" "}
           </p>
         </ContainerHeader>
-        <button onClick={() => {}}>Finalizar pedido</button>
+        <button
+          onClick={() => {
+            dispatch(OrderThunk(cart[0], cart.length, token, isSeller));
+            getOut();
+          }}
+        >
+          Finalizar pedido
+        </button>
+
+        <button
+          onClick={() => {
+            getOut();
+          }}
+        >
+          Voltar
+        </button>
         <ContainerLinerButtom />
       </ContainerTotal>
     </Container>

@@ -5,10 +5,10 @@ import Filter from "../Filter";
 import { Container, ContainerCards } from "./styles";
 
 function List() {
+  //const { user, ticket, orders, isSeller } = useSelector((state) => state.user);
+
   const { tickets } = useSelector((state) => state.tickets);
   const [productsFilter, SetProductsFilter] = useState(tickets);
-
-  const products = tickets;
 
   return (
     <Container>

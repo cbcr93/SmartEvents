@@ -5,29 +5,11 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  flex-direction: row;
+  flex-direction: column;
   margin: 10px 0;
 
-  img {
-    width: 200px;
-    height: 200px;
-  }
-`;
-export const ContainerTotal = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-end;
-  align-content: center;
-
-  height: 100px;
-
-  span {
-    margin-bottom: 20px;
-  }
-
   button {
-    width: 100%;
+    width: 200px;
     padding: 10px 0;
     font-size: 12px;
     font-weight: bold;

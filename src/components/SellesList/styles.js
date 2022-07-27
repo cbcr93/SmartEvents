@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const ContainerOrder = styled.div`
+  position: relative;
+  max-height: 500px;
+  overflow-x: scroll;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const ContainerMap = styled.div``;
+
 export const ContainerDetail = styled.div`
   padding-left: 20px;
 

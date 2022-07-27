@@ -1,13 +1,14 @@
 import Header from "../../components/Header";
+import ProfileInfo from "../../components/ProfileUser";
 import { Container } from "./styles";
 
-function Profile() {
+function infoProfile() {
   return (
     <Container>
       <Header />
-      <></>
+      <ProfileInfo />
     </Container>
   );
 }
 
-export default Profile;
+export default infoProfile;

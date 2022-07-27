@@ -86,15 +86,15 @@ export const ContainerTotal = styled.div`
 
     border-radius: 5px;
 
-    background: #67abd8;
+    background: #fd377e;
     color: #fff;
-    border: 2px solid #67abd8;
+    border: 2px solid #fd377e;
     transition: 0.5s;
 
     &:hover {
       background: #fff;
-      color: #67abd8;
-      border: 2px solid #67abd8;
+      color: #fd377e;
+      border: 2px solid #fd377e;
     }
   }
 `;
