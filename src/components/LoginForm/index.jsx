@@ -16,6 +16,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { singInThunk } from "../../store/modules/users/thunck";
 import { getAllTicketsThunk } from "../../store/modules/tickets/thunks";
+import { ContainerDetail } from "./styles";
 
 const LoginForm = () => {
   const { token } = useSelector((state) => state.user);
@@ -54,6 +55,11 @@ const LoginForm = () => {
 
   return (
     <Container maxWidth="xs" sx={{ mb: 5 }}>
+      <ContainerDetail>
+        <h3>
+          <strong>Smart</strong>Event
+        </h3>
+      </ContainerDetail>
       <Box
         component="form"
         noValidate

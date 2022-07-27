@@ -6,6 +6,7 @@ import {
   ORDERS,
   ISSELLER,
   ID,
+  RESETTOKEN,
 } from "./actiontypes";
 
 export const singIn = (token) => ({
@@ -40,4 +41,9 @@ export const userOrders = (orders) => ({
 export const userSeller = (isSeller) => ({
   type: ISSELLER,
   isSeller,
+});
+
+export const resetToken = (resetToken) => ({
+  type: RESETTOKEN,
+  resetToken,
 });

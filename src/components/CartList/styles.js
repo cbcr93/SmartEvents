@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #f3f3f3;
-  height: 100%;
   display: flex;
-  min-width: 700px;
   align-items: center;
   flex-direction: column;
 
@@ -19,26 +16,16 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerNull = styled.div`
-  background: #f3f3f3;
-  height: 100vh;
-  display: flex;
-  min-width: 700px;
-  align-items: center;
-  flex-direction: column;
-`;
-
 export const ContainerCart = styled.div`
   background: #ffffff;
 
-  width: 600px;
+  max-width: 600px;
   margin: 30px 10px;
   padding: 20px;
 
   position: relative;
 
   hr {
-    background: #f3f3f3;
     border: 0;
     height: 2px;
   }
@@ -60,17 +47,18 @@ export const ContainerHeader = styled.header`
 `;
 
 export const ContainerProduct = styled.section`
-  @media (min-width: 700px) {
-    max-height: 700px;
-    overflow-x: scroll;
+  @media (min-width: 600px) {
+    max-height: 600px;
+    overflow-y: scroll;
   }
 `;
 
 export const ContainerTotal = styled.div`
   background: #ffffff;
-
-  width: 200px;
-  height: 200px;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+  width: 300px;
+  height: 300px;
   margin: 30px 10px;
   padding: 20px;
 

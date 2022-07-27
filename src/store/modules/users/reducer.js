@@ -1,4 +1,12 @@
-import { SIGN_IN, INFO, TICKTS, ORDERS, ISSELLER, ID } from "./actiontypes";
+import {
+  SIGN_IN,
+  INFO,
+  TICKTS,
+  ORDERS,
+  ISSELLER,
+  ID,
+  RESETTOKEN,
+} from "./actiontypes";
 
 const token = localStorage.getItem("@SE:token") || "";
 const user = JSON.parse(localStorage.getItem("@SE:userInfo")) || "";
@@ -47,6 +55,11 @@ const userReducer = (state = defaultState, action) => {
       const { isSeller } = action;
 
       return { ...state, isSeller };
+
+    case RESETTOKEN:
+      const { resetToken } = action;
+
+      return { ...state, token: resetToken };
 
     default:
       return state;

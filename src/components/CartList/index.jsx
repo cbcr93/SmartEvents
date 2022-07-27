@@ -3,7 +3,6 @@ import {
   ContainerCart,
   ContainerHeader,
   ContainerTotal,
-  ContainerLinerButtom,
   ContainerProduct,
 } from "./styles";
 import CardCart from "../CardCart";
@@ -35,14 +34,8 @@ function CartList() {
           <h4>Preço</h4>
         </ContainerHeader>
         <ContainerProduct>
-          {cart.map((produto) => (
-            <>
-              <hr />
-              <CardCart product={produto} />
-            </>
-          ))}
+          <CardCart product={cart[0]} />
         </ContainerProduct>
-        <ContainerLinerButtom />
       </ContainerCart>
       <ContainerTotal>
         <h3>Resumo do Pedido</h3>
@@ -77,7 +70,6 @@ function CartList() {
         >
           Voltar
         </button>
-        <ContainerLinerButtom />
       </ContainerTotal>
     </Container>
   );

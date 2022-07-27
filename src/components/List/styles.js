@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #f3f3f3;
   height: 100vh;
   padding: 30px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ContainerCards = styled.div`

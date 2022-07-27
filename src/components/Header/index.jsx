@@ -5,14 +5,18 @@ import { CgProfile } from "react-icons/cg";
 import { Grid, IconButton, Menu, MenuItem } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { resetToken } from "../../store/modules/users/actions";
 
 function Header() {
   const history = useHistory();
+
+  const dispach = useDispatch();
   const { user } = useSelector((state) => state.user);
 
   const infoButton = [
-    { children: "Info", navi: "profile" },
-    { children: "Pedidos", navi: "order" },
+    { children: "Info", navi: "/profile" },
+    { children: "Pedidos", navi: "/order" },
     { children: "Sair", navi: "/" },
   ];
 
@@ -20,9 +24,10 @@ function Header() {
     if (parm !== "") {
       if (parm === "/") {
         localStorage.clear();
+        dispach(resetToken(""));
         history.push(`${parm}`);
       } else {
-        history.push(`/${parm}`);
+        history.push(`${parm}`);
       }
     }
   };

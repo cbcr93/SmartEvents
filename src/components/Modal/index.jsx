@@ -4,6 +4,9 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
+import { FcPlus } from "react-icons/fc";
+import { Container } from "./styles";
+import { IconButton } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -23,8 +26,23 @@ export default function TransitionsModal(props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Button onClick={handleOpen}>Mais detalhes</Button>
+    <Container>
+      <Button onClick={handleOpen}>
+        {props.ticketTrue ? (
+          <IconButton
+            aria-label="menu"
+            onClick={() => {}}
+            sx={{
+              fontSize: "50px",
+              color: "var(--secundary-1)",
+            }}
+          >
+            <FcPlus />
+          </IconButton>
+        ) : (
+          props.text
+        )}
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -40,6 +58,6 @@ export default function TransitionsModal(props) {
           <Box sx={style}>{props.children}</Box>
         </Fade>
       </Modal>
-    </div>
+    </Container>
   );
 }

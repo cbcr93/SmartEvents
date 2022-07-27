@@ -19,7 +19,7 @@ function Filter({ SetProductsFilter }) {
     <Box
       onSubmit={handleSubmit(handleFiltered)}
       component="form"
-      sx={{ mt: 1, minWidth: "300px", maxWidth: "600px" }}
+      sx={{ mt: 1, maxWidth: "600px", display: "flex" }}
     >
       <Controller
         name="filter"
@@ -33,12 +33,16 @@ function Filter({ SetProductsFilter }) {
             id="filter"
             label="Procure aqui"
             autoFocus
-            sx={{ background: "white" }}
+            sx={{ mt: 2, background: "#fff", height: 48 }}
           />
         )}
       />
 
-      <Button variant="contained" type="submit" sx={{ mt: 2 }}>
+      <Button
+        variant="contained"
+        type="submit"
+        sx={{ mt: 2, background: "#fd377e" }}
+      >
         Pesquisar
       </Button>
     </Box>

@@ -4,13 +4,11 @@ import {
   addToCartThunk,
   removeFromCartThunk,
 } from "../../store/modules/cart/thunks";
-import ticket from "../../assets/img/ticket.png";
 
 function CardCart({ product }) {
   const dispatch = useDispatch();
   return (
     <Container>
-      <img src={ticket} alt={product.name} />
       <ContainerTotal>
         <h4>{product.title}</h4>
         <h5>{product.category}</h5>

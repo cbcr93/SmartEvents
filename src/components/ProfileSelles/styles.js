@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #f3f3f3;
   height: 100vh;
   padding: 30px 10%;
 
@@ -20,7 +19,7 @@ export const ContainerCards = styled.div`
   align-content: center;
   justify-content: center;
 
-  margin: 0 auto;
+  margin: 20px auto;
 
   @media (min-width: 1024px) {
     width: 1024px;

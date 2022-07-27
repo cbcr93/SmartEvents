@@ -24,12 +24,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   align-content: center;
-  justify-content: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
   justify-content: space-between;
 
   margin: 10px;
@@ -40,12 +34,29 @@ export const Container = styled.div`
   background: #ffffff;
 
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid #f0f0f0;
 
   transition: 0.5s;
 
-  hr {
+  &:hover {
     background: #f3f3f3;
+    color: #fd377e;
+    border: 2px solid #fd377e;
+  }
+
+  p {
+    overflow: hidden;
+    height: 20px;
+    width: 266px;
+  }
+
+  h3 {
+    overflow: hidden;
+    height: 28px;
+    width: 266px;
+  }
+
+  hr {
     width: 100%;
     height: 2px;
     border: 0;
@@ -55,6 +66,7 @@ export const Container = styled.div`
     width: 200px;
     height: 100px;
   }
+
   button {
     width: 100%;
     padding: 10px 0;

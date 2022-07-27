@@ -5,8 +5,11 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  flex-direction: row;
-  margin: 10px 0;
+  flex-direction: column;
+
+  @media (min-width: 650px) {
+    flex-direction: row;
+  }
 
   img {
     width: 200px;
@@ -16,22 +19,25 @@ export const Container = styled.div`
 export const ContainerTotal = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-end;
   align-content: center;
+  margin: 0 20px
 
-  height: 100px;
+  height: 200px;
+  min-width: 300px;
 
   span {
     margin-bottom: 20px;
   }
 
   button {
-    width: 100%;
+    width: 200px;
     padding: 10px 0;
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 20px;
 
     border-radius: 5px;
 

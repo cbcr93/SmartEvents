@@ -76,6 +76,7 @@ export const userListerThunk = (userId, token) => (dispatch) => {
         "@SE:isSeller",
         JSON.stringify(response.data.isSeller)
       );
+      console.log(response.data);
 
       dispatch(userInfo(user));
       dispatch(userTickets(response.data.tickts));
@@ -174,7 +175,7 @@ export const updateTicketThunk = (orderId, token, userId) => (dispatch) => {
   console.log(orderId, "---", token);
 
   apiSE
-    .post(`/orders/${orderId}/`, data, {
+    .patch(`/orders/${orderId}/`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

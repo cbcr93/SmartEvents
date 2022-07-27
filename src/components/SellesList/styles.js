@@ -48,17 +48,34 @@ export const Container = styled.div`
   margin: 10px;
   padding: 10px;
   width: 300px;
-  height: 380px;
+  height: 420px;
 
   background: #ffffff;
 
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid #f0f0f0;
 
   transition: 0.5s;
 
-  hr {
+  &:hover {
     background: #f3f3f3;
+    color: #fd377e;
+    border: 2px solid #fd377e;
+  }
+
+  p {
+    overflow: hidden;
+    height: 20px;
+    width: 266px;
+  }
+
+  h3 {
+    overflow: hidden;
+    height: 28px;
+    width: 266px;
+  }
+
+  hr {
     width: 100%;
     height: 2px;
     border: 0;

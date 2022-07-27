@@ -4,6 +4,7 @@ export const ContainerHeader = styled.div`
   background: #ffffff;
   margin: 0 auto;
   min-width: 300px;
+  box-shadow: 0 5px 5px #868e96;
 
   strong {
     color: #fd377e;

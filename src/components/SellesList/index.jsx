@@ -41,7 +41,7 @@ const SellesList = ({ product }) => {
           })}
         </span>
       </ContainerDetail>
-      <TransitionsModal>
+      <TransitionsModal text={"Mais Detalhes"}>
         <ContainerOrder>
           <h3>{product.title}</h3>
           <p>{product.description}</p>
